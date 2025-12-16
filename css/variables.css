@@ -1,0 +1,116 @@
+:root {
+    /* --------------------------------------
+       Material 3 Expressive - "Blush & Clay" (Exact Match)
+       -------------------------------------- */
+
+    /* Primary Palette (The darker accents) */
+    --md-sys-color-primary: #8E585D;
+    /* Dusty Rose / Clay */
+    --md-sys-color-on-primary: #FFFFFF;
+    --md-sys-color-primary-container: #FFE4E6;
+    --md-sys-color-on-primary-container: #3E1E22;
+
+    /* Secondary Palette */
+    --md-sys-color-secondary: #5D4043;
+    /* Darker Brown/Mauve for text/icons */
+    --md-sys-color-on-secondary: #FFFFFF;
+    --md-sys-color-secondary-container: #F0DBDD;
+    --md-sys-color-on-secondary-container: #2B0B0E;
+
+    /* Backgrounds (The Canvas) - The specific "Nude" pink */
+    --md-sys-color-background: #F3E5E4;
+    --md-sys-color-on-background: #4A3B3D;
+
+    /* Surfaces (The "Boxes") */
+    --md-sys-color-surface-container-low: transparent;
+
+    /* Main Content Containers */
+    --md-sys-color-surface-container: #FFFFFF;
+    /* Pure White */
+    --md-sys-color-surface-container-high: #FFFBFC;
+
+    /* Text Colors */
+    --md-sys-color-on-surface: #2D2426;
+    /* Darker Grey/Brown */
+    --md-sys-color-on-surface-variant: #6E5E60;
+    --md-sys-color-outline: #9C8E90;
+    --md-sys-color-outline-variant: #DDC8CA;
+
+    /* Typography */
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Outfit', sans-serif;
+
+    /* Shape & Elevation */
+    --border-radius-large: 32px;
+    --border-radius-medium: 20px;
+    --border-radius-small: 12px;
+
+    --elevation-1: 0px 4px 20px rgba(142, 88, 93, 0.08);
+    /* Colored shadow */
+    --elevation-2: 0px 8px 30px rgba(142, 88, 93, 0.15);
+
+    /* Animation */
+    --motion-easing-emphasized: cubic-bezier(0.2, 0.0, 0.0, 1.0);
+    --motion-duration-medium: 400ms;
+}
+
+/* --------------------------------------
+   Dark Mode Theme - "Midnight Rouge"
+   -------------------------------------- */
+body.dark-mode {
+    /* Backgrounds */
+    --md-sys-color-background: #201A1B;
+    /* Deep Warm Charcoal */
+    --md-sys-color-on-background: #F3E5E4;
+    /* Light Nude text */
+
+    /* Primary Palette */
+    --md-sys-color-primary: #FFB2BC;
+    /* Soft Pink (High Contrast) */
+    --md-sys-color-on-primary: #4A252A;
+    --md-sys-color-primary-container: #8E585D;
+    /* Muted Clay */
+    --md-sys-color-on-primary-container: #FFD9E2;
+
+    /* Surfaces */
+    --md-sys-color-surface-container: #2D2426;
+    /* Dark Brown-Grey Panels */
+    --md-sys-color-surface-container-high: #3A3032;
+    --md-sys-color-surface-container-low: #1A1112;
+
+    /* Text */
+    --md-sys-color-on-surface: #F3E5E4;
+    --md-sys-color-on-surface-variant: #DDC8CA;
+    --md-sys-color-outline: #534345;
+
+    /* Shadows */
+    --elevation-1: 0px 4px 20px rgba(0, 0, 0, 0.4);
+    --elevation-2: 0px 8px 30px rgba(0, 0, 0, 0.6);
+}
+
+body {
+    background-color: var(--md-sys-color-background);
+    color: var(--md-sys-color-on-background);
+    font-family: var(--font-body);
+    margin: 0;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #DDC8CA;
+    border-radius: 99px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--md-sys-color-primary);
+}
