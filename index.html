@@ -132,6 +132,27 @@
                             </svg>
                             <span>Dark Mode</span>
                         </a>
+                        <a href="#" class="dropdown-item" id="lang-toggle-dropdown">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path
+                                    d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                                </path>
+                            </svg>
+                            <span id="lang-text">Switch to Chinese</span>
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <line x1="12" y1="1" x2="12" y2="23"></line>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                            <span>Currency: USD</span>
+                        </a>
                         <div class="dropdown-divider"></div>
                         <a href="#" class="dropdown-item danger">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
@@ -209,7 +230,7 @@
 
             <!-- VIEW: Explore (Previously Dashboard) -->
             <div id="view-explore" class="view-section" style="display: none;">
-                <div class="dashboard-grid">
+                <div class="dashboard-grid explore-grid">
                     <!-- Filters Panel -->
                     <section class="filters-panel glass-panel">
                         <h3>Filter Trends</h3>
@@ -230,8 +251,19 @@
 
                     <!-- Trend Feed -->
                     <section class="trend-feed">
+                        <!-- Hero Section -->
+                        <div id="explore-hero" class="hero-trend"
+                            style="margin-bottom: 32px; display: none; background-image: url('https://images.unsplash.com/photo-1616684705008-6cd6868af2d1?q=80&w=1000&auto=format&fit=crop');">
+                            <div class="hero-content">
+                                <span class="hero-tag">Featured Trend</span>
+                                <h1 id="hero-title">Digital Lavender</h1>
+                                <p id="hero-desc">The color of 2026 evoking stability, serenity, and digital escapism.
+                                </p>
+                            </div>
+                        </div>
+
                         <div class="feed-header">
-                            <h2>Thinking Pink</h2>
+                            <h2>Latest Drops</h2>
                             <div class="sort-options">
                                 <span>Sort by:</span>
                                 <select id="sort-select">
@@ -290,17 +322,37 @@
                         </div>
                         <span>Create New Board</span>
                     </div>
+
                     <div class="collection-card"
-                        style="border-style: solid; justify-content: flex-start; align-items: flex-end; padding: 24px; background-image: url('https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=400'); background-size: cover;">
-                        <span
-                            style="background: white; padding: 8px 16px; border-radius: 99px; font-weight: bold; color: black;">Summer
-                            2026</span>
+                        style="background-image: url('https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=600');">
+                        <div class="collection-overlay">
+                            <span class="collection-count">12 Items</span>
+                            <h3>Summer 2026</h3>
+                        </div>
                     </div>
+
                     <div class="collection-card"
-                        style="border-style: solid; justify-content: flex-start; align-items: flex-end; padding: 24px; background-image: url('https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=400'); background-size: cover;">
-                        <span
-                            style="background: white; padding: 8px 16px; border-radius: 99px; font-weight: bold; color: black;">Denim
-                            Textures</span>
+                        style="background-image: url('https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=600');">
+                        <div class="collection-overlay">
+                            <span class="collection-count">45 Items</span>
+                            <h3>Denim Textures</h3>
+                        </div>
+                    </div>
+
+                    <div class="collection-card"
+                        style="background-image: url('https://images.unsplash.com/photo-1550614000-4b9519e09d9f?auto=format&fit=crop&w=600');">
+                        <div class="collection-overlay">
+                            <span class="collection-count">8 Items</span>
+                            <h3>Neon Punk</h3>
+                        </div>
+                    </div>
+
+                    <div class="collection-card"
+                        style="background-image: url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=600');">
+                        <div class="collection-overlay">
+                            <span class="collection-count">24 Items</span>
+                            <h3>Minimalist Workspace</h3>
+                        </div>
                     </div>
                 </div>
             </div>

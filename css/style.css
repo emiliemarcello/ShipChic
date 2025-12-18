@@ -323,8 +323,8 @@ body.dark-mode .sidebar-rail:not(:hover) .nav-link.active .icon-box {
 .avatar {
     width: 40px;
     height: 40px;
-    background: #EBD5D6;
-    color: var(--md-sys-color-on-surface);
+    background: var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1108,8 +1108,16 @@ body.dark-mode .sidebar-rail:not(:hover) .nav-link.active .icon-box {
     align-items: stretch;
 }
 
+/* Explore Grid Override */
+.explore-grid {
+    grid-template-columns: 260px 1fr;
+    align-items: start;
+}
+
 @media (max-width: 900px) {
-    .dashboard-grid {
+
+    .dashboard-grid,
+    .explore-grid {
         grid-template-columns: 1fr;
         row-gap: 32px;
     }
@@ -1387,66 +1395,89 @@ body.dark-mode .sidebar-rail:not(:hover) .nav-link.active .icon-box {
 /* News Item Enhancements */
 .news-item {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    gap: 16px;
     padding: 16px;
     border-radius: 12px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    cursor: pointer;
-    position: relative;
-}
-
-.news-item::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 3px;
-    background: var(--md-sys-color-primary);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    border-radius: 12px 0 0 12px;
+    background: var(--md-sys-color-surface-container);
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
 }
 
 .news-item:hover {
-    background: rgba(255, 255, 255, 0.05);
-    transform: translateX(8px);
+    background: var(--md-sys-color-surface-container-high);
+    border-color: rgba(var(--md-sys-color-primary-rgb), 0.1);
+    transform: translateX(4px);
 }
 
-.news-item:hover::before {
-    opacity: 1;
+.news-icon-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--md-sys-color-surface-container-high);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.news-content {
+    flex: 1;
+}
+
+.news-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
 }
 
 .news-tag {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     color: var(--md-sys-color-primary);
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 0.8px;
-    display: inline-block;
-    margin-bottom: 6px;
     padding: 2px 8px;
-    background: rgba(204, 255, 0, 0.1);
+    background: rgba(142, 88, 93, 0.1);
+    /* Primary color opacity */
     border-radius: 4px;
 }
 
-.news-content h4 {
-    margin: 0 0 8px 0;
-    font-size: 1.05rem;
-    font-weight: 600;
-    line-height: 1.4;
-    transition: color 0.2s ease;
+.news-time {
+    font-size: 0.75rem;
+    color: var(--md-sys-color-outline);
 }
 
-.news-item:hover .news-content h4 {
-    color: var(--md-sys-color-primary);
+.news-content h4 {
+    margin: 4px 0 8px 0;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--md-sys-color-on-surface);
 }
 
 .news-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     font-size: 0.8rem;
     color: var(--md-sys-color-on-surface-variant);
-    opacity: 0.7;
+}
+
+.read-more {
+    color: var(--md-sys-color-primary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.8rem;
+    opacity: 0;
+    transform: translateX(-5px);
+    transition: all 0.2s ease;
+}
+
+.news-item:hover .read-more {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .action-link {
@@ -1466,6 +1497,15 @@ body.dark-mode .sidebar-rail:not(:hover) .nav-link.active .icon-box {
     flex-direction: column;
     justify-content: center;
     padding: 0 8px;
+}
+
+.ai-tag {
+    font-size: 0.75rem;
+    color: var(--md-sys-color-primary);
+    background: rgba(var(--md-sys-color-primary-rgb), 0.1);
+    padding: 4px 10px;
+    border-radius: 99px;
+    font-weight: 600;
 }
 
 .confidence-bar-container {
@@ -1593,4 +1633,129 @@ body.dark-mode .sidebar-rail:not(:hover) .nav-link.active .icon-box {
     letter-spacing: 1px;
     color: #fff;
     text-decoration: none;
+}
+
+/* Collections View */
+.collections-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 32px;
+    padding-bottom: 80px;
+}
+
+.collection-card {
+    height: 380px;
+    background-color: var(--md-sys-color-surface-container);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--elevation-1);
+    background-size: cover;
+    background-position: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.collection-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+}
+
+/* Add New Collection Card */
+.collection-card.collection-add {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 2px dashed rgba(255, 255, 255, 0.2);
+    color: var(--md-sys-color-on-surface-variant);
+    transition: all 0.2s ease;
+}
+
+.collection-card.collection-add:hover {
+    border-color: var(--md-sys-color-primary);
+    background: rgba(var(--md-sys-color-primary-rgb), 0.05);
+    color: var(--md-sys-color-primary);
+}
+
+.collection-add .add-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--md-sys-color-surface-container-high);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: inherit;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.collection-card.collection-add:hover .add-icon {
+    transform: scale(1.1) rotate(90deg);
+    background: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
+}
+
+.collection-add span {
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}
+
+/* Image Card Overlay */
+.collection-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 32px 24px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 60%, transparent 100%);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+.collection-card:hover .collection-overlay {
+    opacity: 1;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.5) 60%, transparent 100%);
+}
+
+.collection-count {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(4px);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    align-self: flex-start;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+.collection-card:hover .collection-count {
+    background: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
+    transform: translateY(-4px);
+}
+
+.collection-overlay h3 {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
 }
