@@ -21,7 +21,7 @@ const trends = [
         colors_zh: ["午夜黑", "电光蓝"],
         popularity: 98,
         growth: "+45%",
-        image: "https://images.unsplash.com/photo-1551028719-00167b16eac5?q=80&w=1000&auto=format&fit=crop",
+        image: "assets/cyber.jpg",
         tags: ["Cyberpunk", "Streetwear"],
         tags_zh: ["赛博朋克", "街头服饰"]
     },
@@ -37,7 +37,7 @@ const trends = [
         colors_zh: ["纯白", "霓虹莱姆"],
         popularity: 92,
         growth: "+28%",
-        image: "https://images.unsplash.com/photo-1604644401890-0bd678c83788?q=80&w=1000&auto=format&fit=crop",
+        image: "assets/metal.jpg",
         tags: ["Evening", "Metallic"],
         tags_zh: ["晚装", "金属感"]
     },
@@ -53,7 +53,7 @@ const trends = [
         colors_zh: ["电光蓝"],
         popularity: 85,
         growth: "+15%",
-        image: "https://images.unsplash.com/photo-1544022613-e87ca75a784a?q=80&w=1000&auto=format&fit=crop",
+        image: "assets/denim.jpg",
         tags: ["Avant-Garde", "Casual"],
         tags_zh: ["前卫", "休闲"]
     },
@@ -69,7 +69,7 @@ const trends = [
         colors_zh: ["亮粉色", "午夜黑"],
         popularity: 76,
         growth: "+12%",
-        image: "https://images.unsplash.com/photo-1506629082955-511b1aa562c8?q=80&w=1000&auto=format&fit=crop",
+        image: "assets/velvet.jpg",
         tags: ["Retro", "Comfort"],
         tags_zh: ["复古", "舒适"]
     },
@@ -85,7 +85,7 @@ const trends = [
         colors_zh: ["午夜黑", "亮粉色"],
         popularity: 89,
         growth: "+32%",
-        image: "https://images.unsplash.com/photo-1566174053879-31528523f8ae?q=80&w=1000&auto=format&fit=crop",
+        image: "assets/gothic.jpg",
         tags: ["Goth", "Party"],
         tags_zh: ["哥特", "派对"]
     },
@@ -101,7 +101,7 @@ const trends = [
         colors_zh: ["纯白", "电光蓝"],
         popularity: 64,
         growth: "+8%",
-        image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?q=80&w=1000&auto=format&fit=crop",
+        image: "assets/organza.jpg",
         tags: ["Layering", "Spring"],
         tags_zh: ["叠穿", "春季"]
     },
@@ -117,7 +117,7 @@ const trends = [
         colors_zh: ["霓虹莱姆", "亮粉色"],
         popularity: 82,
         growth: "+55%",
-        image: "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?q=80&w=1000&auto=format&fit=crop",
+        image: "assets/knit.jpg",
         tags: ["Winter", "Statement"],
         tags_zh: ["冬季", "个性宣言"]
     },
@@ -133,7 +133,7 @@ const trends = [
         colors_zh: ["午夜黑", "纯白"],
         popularity: 91,
         growth: "+40%",
-        image: "https://images.unsplash.com/photo-1577900232427-18219b9166a0?q=80&w=1000&auto=format&fit=crop",
+        image: "assets/cargo.jpg",
         tags: ["Y2K", "Utility"],
         tags_zh: ["Y2K", "实用风"]
     }
@@ -144,15 +144,15 @@ const featuredTrend = {
     title_zh: "数字薰衣草美学",
     desc: "The color of 2026 evoking stability, serenity, and digital escapism. Dominating knitwear and loungewear categories.",
     desc_zh: "唤起稳定、宁静和数字逃避主义的2026年度代表色。主导针织品和家居服品类。",
-    image: "https://images.unsplash.com/photo-1468327768560-75b778cbb551?q=80&w=1400&auto=format&fit=crop",
+    image: "assets/hero.jpg",
     growth: "+210%"
 };
 
 const collections = [
-    { title: "Summer 2026", title_zh: "2026夏季系列", count: "12 Items", count_zh: "12件商品", img: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=800&auto=format&fit=crop" },
-    { title: "Denim Textures", title_zh: "牛仔纹理", count: "45 Items", count_zh: "45件商品", img: "https://images.unsplash.com/photo-1542272604-787c3835535d?q=80&w=800&auto=format&fit=crop" },
-    { title: "Neon Punk", title_zh: "霓虹朋克", count: "8 Items", count_zh: "8件商品", img: "https://images.unsplash.com/photo-1514539079130-25950c84af65?q=80&w=800&auto=format&fit=crop" },
-    { title: "Minimalist Edit", title_zh: "极简编辑", count: "24 Items", count_zh: "24件商品", img: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=800&auto=format&fit=crop" }
+    { title: "Summer 2026", title_zh: "2026夏季系列", count: "12 Items", count_zh: "12件商品", img: "assets/summer.jpg" },
+    { title: "Denim Textures", title_zh: "牛仔纹理", count: "45 Items", count_zh: "45件商品", img: "assets/denim_text.jpg" },
+    { title: "Neon Punk", title_zh: "霓虹朋克", count: "8 Items", count_zh: "8件商品", img: "assets/neon.jpg" },
+    { title: "Minimalist Edit", title_zh: "极简编辑", count: "24 Items", count_zh: "24件商品", img: "assets/minimalist.jpg" }
 ];
 
 const projects = [
